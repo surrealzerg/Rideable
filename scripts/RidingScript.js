@@ -668,7 +668,7 @@ class Ridingmanager {
 	static async placeRiderHeight(pRiddenToken, pRiderTokenList, pPlaceSameheight = false) {
 		for (let i = 0; i < pRiderTokenList.length; i++) {
 			
-			if (RideableFlags.UseRidingHeight(pRiddenToken)) {
+			if (RideableFlags.UseRidingHeight(pRiddenToken) && !RideableCompUtils.isactiveModule("levels-3d-preview")) {
 				let vTargetz = pRiddenToken.elevation;
 				
 				if (!isFinite(vTargetz)) {
